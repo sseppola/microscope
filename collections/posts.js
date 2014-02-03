@@ -7,6 +7,13 @@ Posts.allow({
 	remove: ownsDocument
 });
 
+Posts.deny({
+	update: function (userId, posts, fieldNames) {
+		// may only edit the following two fields
+		return (_.without(fieldNames, 'url', 'title').length > 0);
+	}
+});
+
 Meteor.methods({
 	post: function (postAttributes) {
 		var user = Meteor.user(),
