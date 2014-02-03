@@ -2,6 +2,11 @@
 // global variable for the whole app by emitting the variable declaration
 Posts = new Meteor.Collection('posts');
 
+Posts.allow({
+	update: ownsDocument,
+	remove: ownsDocument
+});
+
 Meteor.methods({
 	post: function (postAttributes) {
 		var user = Meteor.user(),

@@ -1,5 +1,8 @@
 Template.postEdit.helpers({
 	post: function () {
+		// set the session post ID
+		Session.set('currentPostId', this._id);
+		
 		return Posts.findOne(Session.get('currentPostId'));
 	}
 });
