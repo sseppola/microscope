@@ -18,9 +18,10 @@ Template.postEdit.events({
 		}
 
 		Posts.update(currentPostId, {$set: postProperties}, function (error) {
-			if (error)
-				alert(error.reason);
-			else
+			if (error) {
+				// Display the error to the user
+				Errors.throw(error.reason);
+			} else
 				Router.go('postPage', {_id: currentPostId});
 		});
 	},
