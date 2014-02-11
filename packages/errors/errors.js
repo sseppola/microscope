@@ -10,7 +10,7 @@ Errors = {
 	},
 	clearSeen: function () {
 		Errors.collection.remove({
-			seen: true;
+			seen: true
 		});
 	}
 };

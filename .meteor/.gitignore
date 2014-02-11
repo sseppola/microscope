@@ -1,4 +1,5 @@
 .meteor/local
+.build*
 
 Thumbs.db
 *.DS_Store
