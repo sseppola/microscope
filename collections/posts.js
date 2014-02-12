@@ -51,7 +51,7 @@ Meteor.methods({
 			throw new Meteor.Error(401, "You need to log in to upvote");
 
 		Posts.update({
-			_id: post._id,
+			_id: postId,
 			upvoters: {$ne: user._id}
 		}, {
 			$addToSet: {upvoters: user._id},
